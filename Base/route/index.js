@@ -1,9 +1,11 @@
 var module = angular.module("myModule",['ngRoute','serviceModel']);
 
 module.config(function($routeProvider,$locationProvider){
+	
+	// $locationProvider.html5Mode(true);
 
 	$routeProvider.
-		when("/",{
+		when("/list",{
 			templateUrl:"tpl/list.html",
 			controller:"listController"
 		}).
@@ -13,11 +15,10 @@ module.config(function($routeProvider,$locationProvider){
 		}).
 		otherwise("/");
 
-		// $locationProvider.html5Mode(true);
 });
 
 module.controller("listController",function($scope,dataService){
-
+	alert("sfsd")
 	dataService.loadData()
 		.success(function(data){
 			$scope.names = data;
