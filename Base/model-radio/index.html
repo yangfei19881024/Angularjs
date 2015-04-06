@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red_bg{
+			background: red;
+		}
+		.blue_bg{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="myController">
+		<p ng-class="{red_bg:red,blue_bg:blue}">demo-model</p>
+		<input type="radio" name="colors" data-ng-model="red" ng-value="1">红色<br/>
+		<input type="radio" name="colors" data-ng-model="blue" ng-value="1">蓝色<br/>
+	</div>
+
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
