@@ -14,9 +14,9 @@
 </head>
 <body>
 	<div ng-controller="myController">
-		<p ng-class="{red_bg: color == 'red' ,blue_bg: color == 'blue'}">demo-model</p>
-		<input type="radio" name="colors" data-ng-model="color" value='red'>红色<br/>
-		<input type="radio" name="colors" data-ng-model="color" value='blue' >蓝色<br/>
+		<p ng-class="{red_bg: red ,blue_bg: blue }">demo-model</p>
+		<input type="checkbox" name="colors" data-ng-model="red" >红色<br/>
+		<input type="checkbox" name="colors" data-ng-model="blue" >蓝色<br/>
 	</div>
 
 	<script src="../../bower_components/angular/angular.min.js"></script>
