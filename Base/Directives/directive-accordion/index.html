@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+	<meta charset="UTF-8">
+	<title>directive-demo</title>
+	<link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body ng-controller="ctrl">
+	<!-- <input type="text" ng-model="color"> -->
+
+
+	<outer-space>
+		<inner-space ng-repeat="col in cols" title="{{col.title}}">
+			{{col.content}}
+		</inner-space>
+	</outer-space>
+
+
+	<script src="../../../bower_components/angular/angular.min.js"></script>
+	<script src="dataFactory.js"></script>
+	<script src="directive.js"></script>
+	<!-- <script src="../../../bower_components/bootstrap/dist/css/bootstrap.min.css"></script> -->
+	<script src="index.js"></script>
+</body>
+</html>

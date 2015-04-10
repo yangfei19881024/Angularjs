@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingOne" ng-click="collspace()">
+    <h4 class="panel-title">
+      <a href="javascript:;">
+        {{title}}
+      </a>
+    </h4>
+  </div>
+  <div id="collapseOne" class="panel-collapse  collapse" role="tabpanel" aria-labelledby="headingOne" ng-class="{in:isOpen}">
+    <div class="panel-body" ng-transclude>
+
+    </div>
+  </div>
+</div>
