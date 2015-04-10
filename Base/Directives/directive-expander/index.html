@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.title{
+			width:100px;
+			height: 50px;
+			background: black;
+			color:#FFF;
+		}
+		.content{
+			width: 100px;
+			border:1px solid #000;
+			height: 100px;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="myController">
+		<expander expander-title="expandertitle">
+			{{content}}
+		</expander>
+	</div>
+
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>

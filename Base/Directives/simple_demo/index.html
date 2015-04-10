@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+	<meta charset="UTF-8">
+	<title>directive-demo</title>
+</head>
+<body ng-controller="ctrl">
+	<input type="text" ng-model="color">
+	<hello-world color="{{color}}" color-change="changeColor()"></hello-world>
+	<script src="../../../bower_components/angular/angular.min.js"></script>
+	<script>
+		var module = angular.module("module",[]);
+
+		module.controller("ctrl",["$scope",function($scope){
+
+			$scope.color = "red";
+
+			$scope.changeColor = function(){
+				return 'yellow';
+			}
+
+		}]);
+
+		module.directive("helloWorld",function(){
+			return {
+				restrict:"AE",
+				template:"<p style='background:{{color}}'>{{color}}</p>",
+				replace:true,
+				scope:{
+					color:"@",
+					colorChange:"&"
+				},
+				link:function(scope,element,attr){
+					console.log(attr);
+					element.on("click",function(){
+						scope.$apply(function(){
+							scope.color = "blue";
+						});
+					});
+
+					element.on('mouseover',function(){
+						scope.$apply(function(){
+							scope.color = scope.colorChange();
+						})
+					})
+
+				}
+			}
+		})
+	</script>
+</body>
+</html>
