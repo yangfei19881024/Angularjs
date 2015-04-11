@@ -5,7 +5,7 @@ module.config(function($routeProvider,$locationProvider){
 	// $locationProvider.html5Mode(true);
 
 	$routeProvider.
-		when("/list",{
+		when("/",{
 			templateUrl:"tpl/list.html",
 			controller:"listController"
 		}).
@@ -18,7 +18,6 @@ module.config(function($routeProvider,$locationProvider){
 });
 
 module.controller("listController",function($scope,dataService){
-	alert("sfsd")
 	dataService.loadData()
 		.success(function(data){
 			$scope.names = data;

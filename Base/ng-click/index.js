@@ -15,4 +15,10 @@ myModule.controller("myController",["$scope","$timeout",function($scope,$timeout
 		$scope.names.push($scope.new_name);
 	}
 
+	$scope.age = 12;
+
+	$scope.getName = function(){
+		return $scope.age;
+	}
+
 }]);
