@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div ng-controller="myController">
+	
+		<ul>
+			<li ng-repeat="list in lists|filterItem:1">{{list.action}}</li>
+		</ul>
+		
+	</div>
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
