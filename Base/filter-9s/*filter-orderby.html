@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div ng-controller="myController">
+		
+		<!--
+			//按age属性值进行排序，若是-age，则倒序
+			<ul>
+				<li ng-repeat="c in childrenArray | orderBy:'-age'">{{c.name}}--{{c.age}}</li>
+			</ul>
+		-->
+		<!--
+			//如果age相同，按照name进行排序
+			<ul>
+				<li ng-repeat="c in childrenArray | orderBy:['age',-name']">{{c.name}}--{{c.age}}</li>
+			</ul>
+		-->
+		<!--
+			//如果age相同，按照name进行排序
+		-->
+
+		<ul>
+			<li ng-repeat="c in childrenArray | orderBy:orderFunc">{{c.name}}--{{c.age}}</li>
+		</ul>
+	</div>
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="filter-orderby.js"></script>
+</body>
+</html>
