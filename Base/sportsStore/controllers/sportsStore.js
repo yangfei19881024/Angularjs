@@ -34,9 +34,14 @@ angular.module("sportsStore",['customFilters'])
 		}
 
 		$scope.activeClasses = function(item){
-			console.log(selectedCategory+"----"+item);
+			// console.log(selectedCategory+"----"+item);
 
 			return selectedCategory == item ? activeClass : "";
 		}
 
-	});	
+	})
+	.filter("limit2",function(){
+		return function(data){
+			return $filter("limitTo")(data,2);
+		}
+	})
