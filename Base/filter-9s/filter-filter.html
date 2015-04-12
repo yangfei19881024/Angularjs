@@ -10,10 +10,10 @@
 		
 		<!--
 			参数是函数，指定返回age>4的
-		-->
 		<ul>
 			<li ng-repeat="c in childrenArray | filter:func ">{{c.name}}--{{c.age}}</li>
 		</ul>
+		-->
 		
 		<!--
 			匹配属性值中含有'a'的
@@ -32,12 +32,13 @@
 		
 		<!--
 			参数是对象，匹配name属性中含有i的
-			<ul>
-				<li ng-repeat="c in childrenArray | filter:{name:'i'} ">{{c.name}}</li>
-			</ul>
 		-->
+
+		<ul>
+			<li ng-repeat="c in childrenArray | filter:{$:4} ">{{c.name}}</li>
+		</ul>
 	</div>
 	<script src="../../bower_components/angular/angular.min.js"></script>
-	<script src="index.js"></script>
+	<script src="filter-filter.js"></script>
 </body>
 </html>
