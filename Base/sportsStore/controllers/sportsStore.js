@@ -1,5 +1,6 @@
 angular.module("sportsStore",['customFilters'])
-	.controller("sportsStoreCtrl",function($scope){
+	.constant("activeClass","btn-primary")
+	.controller("sportsStoreCtrl",function($scope,activeClass){
 
 		$scope.data = {
         	products: [
@@ -19,7 +20,7 @@ angular.module("sportsStore",['customFilters'])
 		$scope.selectCategory = function(cate){
 			// alert(selectedCategory)
 			
-			$scope.select_category = cate;
+			$scope.select_category = selectedCategory =cate;
 		}
 
 		$scope.filterFn = function (product) {
@@ -30,6 +31,12 @@ angular.module("sportsStore",['customFilters'])
              
             // return val;
             console.log("a")
+		}
+
+		$scope.activeClasses = function(item){
+			console.log(selectedCategory+"----"+item);
+
+			return selectedCategory == item ? activeClass : "";
 		}
 
 	});	
