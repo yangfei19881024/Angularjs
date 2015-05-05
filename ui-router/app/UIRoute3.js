@@ -6,45 +6,39 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/index',
             views: {
                 '': {
-                    templateUrl: 'tpls3/index.html',
-                },
-                'topbar@index': {
-                    templateUrl: 'tpls3/topbar.html',
-                    controller:function($scope,getDate){
-                        console.log(getDate);
-                    }
+                    templateUrl: 'tpls3/index.html'
                 },
                 'main@index': {
                     templateUrl: 'tpls3/home.html'
                 }
             }
         })
-        .state('index.usermng', {
+        .state('usermng', {
             url: '/usermng',
             views: {
-                'main@index': {
+                '': {
                     templateUrl: 'tpls3/usermng.html',
                     controller: function($scope, $state) {
                         $scope.addUserType = function() {
-                            $state.go("index.usermng.addusertype");
+                            $state.go("usermng.addusertype");
                         }
                     }
                 }
             }
         })
-        .state('index.usermng.highendusers', {
+        .state('usermng.highendusers', {
             url: '/highendusers',
             templateUrl: 'tpls3/highendusers.html'
         })
-        .state('index.usermng.normalusers', {
+        .state('usermng.normalusers', {
             url: '/normalusers',
             templateUrl: 'tpls3/normalusers.html'
         })
-        .state('index.usermng.lowusers', {
+        .state('usermng.lowusers', {
             url: '/lowusers',
             templateUrl: 'tpls3/lowusers.html'
         })
-        .state('index.usermng.addusertype', {
+        .state('usermng.addusertype', {
             url: '/addusertype',
             templateUrl: 'tpls3/addusertypeform.html',
             controller: function($scope, $state) {
@@ -53,28 +47,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('index.permission', {
+        .state('permission', {
             url: '/permission',
-            views: {
-                'main@index': {
-                    template: '这里是权限管理'
-                }
-            }
+            template: '这里是权限管理'
         })
-        .state('index.report', {
+        .state('report', {
             url: '/report',
-            views: {
-                'main@index': {
-                    template: '这里是报表管理'
-                }
-            }
+            template: '这里是报表管理'
         })
-        .state('index.settings', {
+        .state('settings', {
             url: '/settings',
-            views: {
-                'main@index': {
-                    template: '这里是系统设置'
-                }
-            }
+            template: '这里是系统设置'
         })
 });

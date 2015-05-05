@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <div ui-view></div>
+	<div class="container">
+		<header ng-include="'tpls3/topbar.html'"></header>
+		<div ui-view></div>
+	</div>
 </body>
 
 </html>
