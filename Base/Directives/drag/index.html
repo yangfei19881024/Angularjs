@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="module">
+<head>
+	<meta charset="UTF-8">
+	<title>directive-demo</title>
+	<style>
+		.draggables{
+			display:inline-block;
+			width:100px;
+			height:100px;
+			background:red;
+			cursor:pointer;
+			position:absolute;
+		}
+	</style>
+</head>
+<body ng-controller="ctrl">
+	<span draggable></span>
+	<div draggable style="height:200px;width:100px;"></div>
+	<span draggable></span>
+	<div class="box">asdfasdf</div>
+
+	<script src="../../../bower_components/angular/angular.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>

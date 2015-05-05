@@ -1,0 +1,33 @@
+<!--
+当为false时候，儿子继承父亲的值，改变父亲的值，儿子的值也随之变化，反之亦如此。（继承不隔离）
+-->
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <script src="http://cdn.staticfile.org/angular.js/1.2.10/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-controller='MainController'>
+        父亲: {{name}}
+        <input ng-model="name" />
+        <div my-directive></div>
+  </div>
+
+  <script>
+    angular.module('myApp', [])
+        .controller('MainController', function ($scope) {
+           $scope.name = 'leifeng';
+        })
+        .directive('myDirective', function () {
+            return {
+                restrict: 'EA',
+                scope:false,//改变此处的取值,看看有什么不同
+                template: '<div>儿子:{{ name }}<input ng-model="name"/></div>'
+            };
+        });
+  </script>
+
+</body>
+</html>

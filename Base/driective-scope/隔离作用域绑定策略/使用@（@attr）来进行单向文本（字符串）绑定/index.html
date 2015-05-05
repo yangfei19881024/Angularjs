@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <script src="http://cdn.staticfile.org/angular.js/1.2.10/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-controller='MainController'>
+        <input type="text" ng-model="color" placeholder="Enter a color"/>
+        <hello-world color-attr='{{color}}'></hello-world>   //注意这里设置了color-attr属性，绑定了{{color}}
+  </div>
+
+  <script>
+    var app = angular.module('myApp',[]);
+    app.controller('MainController',function(){});
+    app.directive('helloWorld',function(){
+     return {
+        scope: {color:'@colorAttr'},  //指明了隔离作用域中的属性color应该绑定到属性colorAttr
+        restrict: 'AE',
+        replace: true,
+        template: '<p style="background-color:{{color}}">Hello World</p>'
+     }
+    });
+  </script>
+
+</body>
+</html>

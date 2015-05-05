@@ -37,34 +37,25 @@
           })
   }]);
 */
-var example = angular.module("myApp", ['ui.router']);
-example.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state("route1",{
-        url:"/route1",
-        templateUrl:"views/route1.html"
-      })
-      .state("route2",{
-        url:"/route2",
-        templateUrl:"views/route2.html",
-      })
-      .state("route1.list1",{
-        url:"list1",
-        templateUrl:"views/list1.html",
-        controller:function($scope){
-            $scope.items = ["A", "List", "Of", "Items"];
-        }
-      })
-      .state("route2.list2",{
-        url:"list1",
-        templateUrl:"views/list2.html",
-        controller:function($scope){
-            $scope.things = ["B", "List", "Of", "Items"];
-        }
+var example = angular.module("myApp",[]);
+example.controller("dataList",["$scope",function($scope){
 
-      })
+    $scope.users = [
+      {
+        name:"yangfei",
+      },
+      {
+        name:"tomcat",
+      },
+      {
+        name:"andy",
+      }
+    ];
 
-    $urlRouterProvider.otherwise('route1');
-});
+    $scope.addUser = function(){
+      $scope.users.push({name:$scope.username});
+      $scope.username = "";
+    }
 
+}])
 

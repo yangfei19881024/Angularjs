@@ -1,4 +1,4 @@
-var module = angular.module("module",['dataServices','directives']);
+var module = angular.module("module",['dataServices','webapp.directives']);
 
 
 
