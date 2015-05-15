@@ -15,7 +15,6 @@ module.controller("listController",function($scope,$q){
 		return defer.promise;
 	}
 
-
 	$scope.getName("yang")
 		.then(function(name){
 			alert(name);
@@ -23,7 +22,13 @@ module.controller("listController",function($scope,$q){
 			alert("reject");
 		})
 		.then(function(){
+
+
 			alert("ok pass");
 		});
+
+});
+
+module.directive("Test",function(){
 
 });

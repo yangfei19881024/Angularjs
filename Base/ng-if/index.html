@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8" />
+  <script src="http://cdn.staticfile.org/angular.js/1.2.10/angular.min.js"></script>
+</head>
+<body>
+
+  <div ng-controller='MainController'>
+        <input type="text" ng-model="name" placeholder="Enter a color"/>
+        {{name}}
+        <hello-world say-something999="say();" name="name"></hello-world>
+  </div>
+
+  <script>
+    var app = angular.module('myApp',[]);
+    app.controller('MainController',function($scope){
+      $scope.say = function(){
+        alert('hello');
+      }
+      $scope.name = 'leifeng';
+    });
+    app.directive('helloWorld',function(){
+     return {
+        scope:{
+          saysomething:'&saySomething999',
+          name:'='
+        },
+        restrict: 'AE',
+        replace: true,
+        template: '<button type="button" ng-bind="name" ng-click="saysomething();"></button>'
+     }
+    });
+  </script>
+
+</body>
+</html>
