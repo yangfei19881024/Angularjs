@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+
+	<div ng-controller="MyController">
+
+		<ul>
+	    <li ng-repeat="arr in arr1">{{arr}}</li>
+		</ul>
+
+
+
+		<!--一维数组中 有重复的项-->
+		<!--do not work-->
+		<ul>
+	    <li ng-repeat="arr in arr2">{{arr}}</li>
+		</ul>
+
+		<!--it works-->
+		<ul>
+	    <li ng-repeat="arr in arr2 track by $index">{{arr}}</li>
+		</ul>
+
+	</div>
+
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
+	<script src="index.js"></script>
+
+</body>
+</html>
