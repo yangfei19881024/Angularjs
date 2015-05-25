@@ -19,16 +19,16 @@ angular.module("sportsStore",['customFilters'])
 
 		$scope.selectCategory = function(cate){
 			// alert(selectedCategory)
-			
+
 			$scope.select_category = selectedCategory =cate;
 		}
 
 		$scope.filterFn = function (product) {
 			// alert("asdf"
-             
+
             // var val = selectedCategory == null ||
             //     product.category == selectedCategory;
-             
+
             // return val;
             console.log("a")
 		}
