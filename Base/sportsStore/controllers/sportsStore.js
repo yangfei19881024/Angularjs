@@ -1,6 +1,14 @@
 angular.module("sportsStore",['customFilters'])
 	.constant("activeClass","btn-primary")
-	.controller("sportsStoreCtrl",function($scope,activeClass){
+	.controller("sportsStoreCtrl",function($scope,activeClass,getData){
+
+		console.log("hellow");
+
+		$scope.classes = getData;
+
+		$scope.removeItem = function(index){
+			$scope.classes.splice(index,1);
+		}
 
 		$scope.data = {
         	products: [

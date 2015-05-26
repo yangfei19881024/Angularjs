@@ -28,9 +28,21 @@
                 </h3>
             </div>
         </div>
+
+        <table class="table">
+          <tr><th>Class Name</th><th>Class Name</th><th>Class Name</th></tr>
+          <tr ng-repeat="class in ::classes">
+            <td>{{class.className}}</td>
+            <td><input type="text" ng-model="class.className"></td>
+            <td>{{class.className}}</td>
+            <td><button class="btn-primary btn" data-ng-click="removeItem($index)">删除</button></td>
+          </tr>
+        </table>
+
     </div>
     <script src="./public/libs/angular/angular.min.js"></script>
     <script src="./controllers/sportsStore.js"></script>
     <script src="./filters/customFilters.js"></script>
+    <script src="./services/data.js"></script>
 </body>
 </html>
