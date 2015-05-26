@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+
+	<div ng-controller="MyController">
+
+		<table border=1 width="100%">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+			</tr>
+			<tr ng-repeat="user in users">
+				<td>{{user.name}}</td>
+				<td>{{user.age}}</td>
+			</tr>
+		</table>
+
+
+	</div>
+
+	<script src="../../bower_components/angular/angular.min.js"></script>
+	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
+	<script src="index.js"></script>
+
+</body>
+</html>
