@@ -4,7 +4,8 @@ angular.module('shopApp.directive',[]);
 angular.module('shopApp', [
   'ui.router',
   'shopApp.controller',
-  'shopApp.directive'
+  'shopApp.directive',
+  'pasvaz.bindonce'
 ])
 .config(["$locationProvider",function($locationProvider){
   $locationProvider.html5Mode({ enabled: true, requireBase: false })
@@ -18,6 +19,11 @@ angular.module('shopApp', [
       url:"/",
       controller:"index",
       templateUrl:"views/index.html",
+    })
+    .state("list",{
+      url:"/list",
+      controller:"list",
+      templateUrl:"views/list.html"
     })
 
 }])

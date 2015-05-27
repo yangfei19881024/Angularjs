@@ -1,0 +1,19 @@
+<table border="1" width="100%">
+
+  <tr>
+    <th>姓名</th>
+    <th>姓名输入</th>
+    <th>年龄</th>
+    <th>操作</th>
+  </tr>
+
+  <tr bindonce ng-repeat="user in ::users">
+    <td>{{::user.name}}</td>
+    <td><input type="text" ng-model="user.name"/></td>
+    <td>{{user.age}}</td>
+    <td>
+      <a href="javascript:;" ng-click="removeItem($index)">删除</a>
+    </td>
+  </tr>
+
+</table>
