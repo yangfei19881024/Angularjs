@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app="mytodoApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -12,9 +12,12 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+    @charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+    </style>
     <!-- endbuild -->
   </head>
-  <body ng-controller="dataList">
+  <body ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -27,11 +30,45 @@
     </div> -->
 
     <!---->
-    <ul>
-      <li ng-repeat="u in users">{{u.name}}</li>
-    </ul>
-    <input type="text" ng-model="username"><br/>
-    <input type="button" ng-click="addUser()" value="add">
+    <!-- <ul>
+      <li ng-repeat="person in Persons">{{person.name}}</li>
+    </ul> -->
+
+    <div class="container">
+      <h2>My todos</h2>
+
+      <form role="form" ng-submit="addTodo()">
+        <div class="row">
+          <div class="input-group">
+            <input type="text" ng-model="todo" placeholder="What needs to be done?">
+            <span class="input-grounp-btn">
+              <input type="submit" value="Add" class="btn btn-primary">
+            </span>
+          </div>
+        </div>
+      </form>
+
+      <p></p>
+
+      <div ui-sortable ng-model="todos">
+        <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
+            <input type="text" ng-model="todo" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+            </span>
+        </p>
+      </div>
+
+      <input type="button" ng-click="addLocalStorage()" class="btn btn-primary" value="添加localStorage">
+      <input type="button" ng-click="getLocalStorage()" class="btn btn-primary" value="获取localStorage">
+
+
+      <div class="ng-cloak" ng-cloak>
+        {{'Kitty' | greet}}
+      </div>
+
+    </div>
+
     <!---->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -57,12 +94,16 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/mainController.js"></script>
+        <script src="scripts/controllers/main.js"></script>
         <!-- <script src="scripts/directive/mydirective.js"></script> -->
             <!-- endbuild -->
 </body>
