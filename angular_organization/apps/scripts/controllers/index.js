@@ -1,4 +1,4 @@
-angular.module("shopApp.controller",[])
+angular.module("shopApp.controller")
   .controller("index",function($scope){
 
    $scope.users = [
@@ -18,6 +18,8 @@ angular.module("shopApp.controller",[])
 
     $scope.name = "angular";
 
-    console.log("hello world");
+    var arr = _.first([1, 2, 3]);
+
+    console.log(arr);
 
   });
