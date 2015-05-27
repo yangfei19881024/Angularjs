@@ -18,6 +18,7 @@ angular.module("shopApp.controller")
 
     $scope.name = "angular";
 
+    // lodash test
     var arr = _.first([1, 2, 3]);
 
     console.log(arr);
