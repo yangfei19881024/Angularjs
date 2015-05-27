@@ -2,6 +2,12 @@ var routerApp = angular.module('routerApp', ['ui.router']);
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
     $stateProvider
+        .state("merchants",{
+          url:"/merchants/:typeId/a/:areaId/o/:orderId?cityid&lat&lng&q",
+          controller:function($stateParams){
+            alert($stateParams.cityid);
+          }
+        })
         .state('home', {
             url: '/home',
             templateUrl: 'tpls2/home.html'

@@ -3,16 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.strike{
+			text-decoration: line-through;
+		}
 
+		.bold{
+			font-weight: bold;
+		}
+
+		.red{
+			color:red;
+		}
+
+		.active{
+			color: red;
+		}
+
+		.list-group li{
+			padding:5px 0;
+		}
+
+		.htitle{
+			color:white;
+		}
+		.red{
+			background: red;
+		}
+	</style>
 </head>
-<body>
 
-	<div ng-controller="listController">
-		<h1>
-			{{clock.now}}
+<body ng-controller="MyCntrl">
 
-		</h1>
-	</div>
+	<input type="checkbox" ng-model="master">点击我
+	<input type="checkbox" ng-checked="master"><br/>
+	<input type="checkbox" ng-checked="master"><br/>
+	<input type="checkbox" ng-checked="master"><br/>
+	<input type="checkbox" ng-checked="master"><br/>
+	<input type="checkbox" ng-checked="masterww"><br/>
+	<input type="checkbox" ng-checked="master"><br/>
+
 
 	<script src="../../bower_components/angular/angular.min.js"></script>
 	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
