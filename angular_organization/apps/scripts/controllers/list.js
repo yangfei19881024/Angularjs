@@ -1,5 +1,5 @@
 angular.module("shopApp.controller")
-  .controller("list",function($scope,$stateParams){
+  .controller("list",function($scope,$stateParams,$state){
 
 
     $scope.users = [
@@ -12,6 +12,13 @@ angular.module("shopApp.controller")
 
     ];
 
-    alert( $stateParams.serviceId )
+    $scope.goHome = function(){
+      /**
+      $state.go(param)
+      参数是 state状态的值
+      **/
+
+      $state.go('home');
+    }
 
   })
