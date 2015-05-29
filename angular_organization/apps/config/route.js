@@ -28,16 +28,13 @@ angular.module("shopApp.config")
       controller:"list",
       templateUrl:"views/list.html"
     })
-    .state('user',{
+    .state('index.user',{
       url:'/user',
-      views:{
-        'sidebar@index':{
-          templateUrl:'views/sidebar.html'
-        },
-        'content@index':{
-          templateUrl:'views/user_content.html'
-        }
-      }
+      templateUrl:'views/user_content.html'
+    })
+    .state('index.user.adduser',{
+      url:'/adduser',
+      templateUrl:'views/user_add.html'
     })
 
 }])
