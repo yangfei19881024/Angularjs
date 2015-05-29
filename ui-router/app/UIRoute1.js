@@ -13,6 +13,7 @@ myUIRoute.config(function($stateProvider, $urlRouterProvider) {
                 $scope.items = ["A", "List", "Of", "Items"];
             }
         })
+
         .state('state2', {
             url: "/state2",
             templateUrl: "tpls/state2.html"
