@@ -13,6 +13,12 @@ angular.module('shopApp.controller')
   $scope.users = dataService.getData();
 
   $scope.swipes = swipeData;
+
+  $scope.deleteBanner = function(){
+
+    $scope.swipes.splice(1,1);
+
+  }
   // $scope.users = [
   //   {name:"yangfei",age:12},
   //   {name:"tomcat",age:12},

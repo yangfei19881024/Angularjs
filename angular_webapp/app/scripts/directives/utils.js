@@ -16,10 +16,7 @@ angular.module("shopApp")
               scope.$root.$broadcast("ReachBottom");
 
             }
-
         })
-
-
       }
     }
   })
@@ -31,7 +28,7 @@ angular.module("shopApp")
       link:function(scope,element,attr){
 
         new Swipe(element[0], {
-          startSlide: 2,
+          startSlide: 1,
           speed: 400,
           auto: 3000,
           continuous: true,
@@ -42,7 +39,9 @@ angular.module("shopApp")
             angular.element(".swipe-num li").removeClass("current").eq(index).addClass("current");
 
           },
+
           transitionEnd: function(index, elem) {}
+          
         });
 
       }

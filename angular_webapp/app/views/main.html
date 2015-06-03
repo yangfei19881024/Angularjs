@@ -19,14 +19,29 @@
 <div class="row marketing">
   <a data-ui-sref="list">{{click}}</a>
 </div>
+<button data-ng-click="deleteBanner()">删除</button>
 
-<div id='slider' class='swipe' data-swipe>
+<!-- <div id='slider' class='swipe' data-swipe>
   <div class='swipe-wrap'>
     <div ng-repeat="swipe in swipes">
       <img src="{{swipe.img}}"/>
     </div>
   </div>
   <ul class="swipe-num">
-    <li ng-repeat="swipe in ::swipes" ng-class="{current:$first}"></li>
+    <li ng-repeat="swipe in swipes" ng-class="{current:$first}"></li>
+  </ul>
+</div> -->
+
+
+<div id='slider' class='swipe' data-swipe>
+  <div class='swipe-wrap'>
+    <div data-bindonce='swipe' data-ng-repeat='swipe in swipes' >
+      <a href="#">
+        <img data-bo-src="swipe.img" />
+      </a>
+    </div>
+  </div>
+  <ul class="swipe-num">
+    <li data-bindonce='swipe' data-ng-repeat='swipe in swipes' data-bo-class='{ current: $first }'></li>
   </ul>
 </div>

@@ -23,9 +23,9 @@ angular.module('shopApp.controller')
 
   });
 
-  $scope.deleteUser = function(index){
+  $scope.deleteBanner = function(index){
 
-    $scope.users.splice(index,1);
+    $scope.swipes.splice(index,1);
 
   }
 
