@@ -9,10 +9,12 @@ angular.module("shopApp")
         var _window = angular.element($window);
         var _document = angular.element($document);
 
-        _window.on("scroll",function(){
+        _window.scroll(function(){
 
             if( _window.height() + _window.scrollTop() > _document.height() - 30 ){
-              console.log("到底部了");
+
+              scope.$broadcast("ReachBottom");
+
             }
 
         })

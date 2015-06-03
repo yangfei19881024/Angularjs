@@ -14,6 +14,13 @@ angular.module('shopApp.controller')
 
   $scope.click = "点击进入列表页";
 
+  $scope.$on("ReachBottom",function(){
+
+
+    console.log("ReachBottom--到达底部...");
+
+  })
+
   // $scope.users = [
   //   {name:"yangfei",age:12},
   //   {name:"tomcat",age:12},
