@@ -10,8 +10,10 @@
 angular.module('shopApp')
   .controller('sonController', function ($scope,$stateParams) {
 
-    $scope.name = "hello 子路由!";
+    $scope.name = "hello 子路由!"+$stateParams.params1;
 
     console.log($stateParams);
+
+
 
   });
