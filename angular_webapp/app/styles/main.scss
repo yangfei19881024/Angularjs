@@ -41,6 +41,20 @@ img{
   max-width: 100%;
 }
 
+.swipe-num{
+  li{
+    display: inline-block;
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    margin-right:10px;
+    &.current{
+      background: red;
+    }
+  }
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;

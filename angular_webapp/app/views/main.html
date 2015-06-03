@@ -26,4 +26,7 @@
       <img src="{{swipe.img}}"/>
     </div>
   </div>
+  <ul class="swipe-num">
+    <li ng-repeat="swipe in ::swipes" ng-class="{current:$first}"></li>
+  </ul>
 </div>

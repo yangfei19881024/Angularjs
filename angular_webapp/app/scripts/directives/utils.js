@@ -37,7 +37,11 @@ angular.module("shopApp")
           continuous: true,
           disableScroll: false,
           stopPropagation: false,
-          callback: function(index, elem) {},
+          callback: function(index, elem) {
+
+            angular.element(".swipe-num li").removeClass("current").eq(index).addClass("current");
+
+          },
           transitionEnd: function(index, elem) {}
         });
 
