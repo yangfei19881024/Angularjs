@@ -8,10 +8,11 @@
  * Controller of the angularWebappApp
  */
 angular.module('shopApp.controller')
-.controller('listController', function ($scope,dataService) {
+.controller('listController', function ($scope,dataService,swipeData) {
 
   $scope.users = dataService.getData();
 
+  $scope.swipes = swipeData;
   // $scope.users = [
   //   {name:"yangfei",age:12},
   //   {name:"tomcat",age:12},

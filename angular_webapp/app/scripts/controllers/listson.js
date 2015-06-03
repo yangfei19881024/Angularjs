@@ -12,8 +12,4 @@ angular.module('shopApp')
 
     $scope.name = "hello 子路由!"+$stateParams.params1;
 
-    console.log($stateParams);
-
-
-
   });

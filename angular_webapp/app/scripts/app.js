@@ -22,4 +22,5 @@
        'shopApp.controller',
        'shopApp.directive',
        'shopApp.service',
+       'pasvaz.bindonce'
     ])

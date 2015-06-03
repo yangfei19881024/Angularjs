@@ -9,6 +9,21 @@
 
 <div scroll-to-bottom></div>
 
+<div class="container">
+  <ul>
+    <li bindonce data-ng-repeat="user in users">{{user.name}} <a href="javascript:;" class="btn primary-btn" data-ng-click="deleteUser($index)">删除</a></li>
+  </ul>
+</div>
+
+
 <div class="row marketing">
   <a data-ui-sref="list">{{click}}</a>
+</div>
+
+<div id='slider' class='swipe' data-swipe>
+  <div class='swipe-wrap'>
+    <div ng-repeat="swipe in swipes">
+      <img src="{{swipe.img}}"/>
+    </div>
+  </div>
 </div>

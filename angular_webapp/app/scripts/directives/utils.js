@@ -13,7 +13,7 @@ angular.module("shopApp")
 
             if( _window.height() + _window.scrollTop() > _document.height() - 30 ){
 
-              scope.$broadcast("ReachBottom");
+              scope.$root.$broadcast("ReachBottom");
 
             }
 
@@ -22,4 +22,26 @@ angular.module("shopApp")
 
       }
     }
+  })
+
+  .directive("swipe",function(){
+
+    return {
+      restrict:"AE",
+      link:function(scope,element,attr){
+
+        new Swipe(element[0], {
+          startSlide: 2,
+          speed: 400,
+          auto: 3000,
+          continuous: true,
+          disableScroll: false,
+          stopPropagation: false,
+          callback: function(index, elem) {},
+          transitionEnd: function(index, elem) {}
+        });
+
+      }
+    }
+
   })
