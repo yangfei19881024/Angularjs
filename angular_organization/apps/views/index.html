@@ -1,12 +1,16 @@
-<h1>Index page</h1>
-<body>
-  <h1>Index body page!!!</h1>
-  <ul>
-    <li ng-repeat="user in users">{{user.name}}</li>
-  </ul>
+
+<h1>Index body page!!!</h1>
 
 
-  <hello-world></hello-world>
+<button type="button" name="button" ng-click="clickMe()">点击测试</button>
 
+<ul class="list" scroll-top>
+  <li ng-repeat="user in users">{{user.name}}</li>
+</ul>
 
-</body>
+<div scroll id="page" ng-class="{min:boolChangeClass}">
+
+    <header></header>
+    <section></section>
+
+</div>

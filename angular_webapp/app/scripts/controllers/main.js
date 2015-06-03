@@ -7,51 +7,28 @@
  * # MainCtrl
  * Controller of the angularWebappApp
  */
-angular.module('mytodoApp')
-.controller('MainCtrl', function ($scope, localStorageService) {
+angular.module('shopApp.controller')
+.controller('MainCtrl', function ($scope,dataService) {
 
-  var todosInStore = localStorageService.get('todos');
+  $scope.users = dataService.getData();
 
-  $scope.todos = todosInStore && todosInStore.split('\n') || [];
 
-  $scope.$watch('todos', function () {
-    console.log("change!");
-    localStorageService.add('todos', $scope.todos.join('\n'));
-  }, true);
 
-  $scope.addTodo = function () {
-    $scope.todos.push($scope.todo);
-    $scope.todo = '';
-  };
+  // $scope.users = [
+  //   {name:"yangfei",age:12},
+  //   {name:"tomcat",age:12},
+  //   {name:"gaoya1",age:12},
+  //   {name:"gaoya2",age:12},
+  //   {name:"gaoya3",age:12},
+  //   {name:"gaoya4",age:12},
+  //   {name:"gaoya5",age:12},
+  //   {name:"gaoya6",age:12},
+  //   {name:"gaoya7",age:12},
+  //   {name:"gaoya8",age:12},
+  //   {name:"gaoya9",age:12},
+  //   {name:"gaoya10",age:12},
+  //   {name:"gaoya11",age:12}
+  // ]
+  //
 
-  $scope.removeTodo = function (index) {
-    $scope.todos.splice(index, 1);
-  };
-
-  $scope.addLocalStorage = function(){
-
-    var obj = [
-      {name:"yangfei",age:23},
-      {name:"tomcat",age:24}
-    ];
-
-    var obj_str = JSON.stringify(obj);
-
-    localStorageService.add("obj_val",obj_str);
-
-  }
-
-  $scope.getLocalStorage = function(){
-
-    var obj = localStorageService.get("obj_val");
-
-    console.log(obj);
-
-  }
 })
-
-.filter("greet", function () {
-      return function(name) {
-          return "Hello " + name + " !";
-      }
-  });

@@ -1,5 +1,5 @@
 angular.module("shopApp.controller")
-  .controller("index",function($scope){
+  .controller("index",function($scope,$window){
 
    $scope.users = [
       {
@@ -13,14 +13,39 @@ angular.module("shopApp.controller")
       {
         name:"gaoya",
         age:17
+      },
+      {
+        name:"gaoya2",
+        age:17
+      },
+      {
+        name:"gaoya3",
+        age:17
+      },
+      {
+        name:"gaoya4",
+        age:17
+      }
+      ,{
+        name:"gaoya5",
+        age:17
+      }
+      ,{
+        name:"gaoya6",
+        age:17
+      },
+      {
+        name:"gaoya7",
+        age:17
+      },
+      {
+        name:"gaoya8",
+        age:17
       }
     ];
 
-    $scope.name = "angular";
-
-    // lodash test
-    var arr = _.first([1, 2, 3]);
-
-    console.log(arr);
+    angular.element($window).bind("scroll", function(e) {
+       $scope.visible = false;
+   })
 
   });
