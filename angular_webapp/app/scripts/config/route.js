@@ -11,4 +11,14 @@ angular.module('shopApp')
           templateUrl:"/views/main.html",
           controller:"MainCtrl"
         })
+        .state("list",{
+          url:"/list",
+          templateUrl:"/views/list.html",
+          controller:"listController"
+        })
+        .state("list.son",{
+          url:'/list.son/p1/:params1/p2/:params2/p3/:params3',
+          template:"<h1>子路由内容 {{name}}</h1>",
+          controller:"sonController"
+        })
   });

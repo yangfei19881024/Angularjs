@@ -8,11 +8,9 @@
  * Controller of the angularWebappApp
  */
 angular.module('shopApp.controller')
-.controller('MainCtrl', function ($scope,dataService) {
+.controller('listController', function ($scope,dataService) {
 
-  // $scope.users = dataService.getData();
-
-  $scope.click = "点击进入列表页";
+  $scope.users = dataService.getData();
 
   // $scope.users = [
   //   {name:"yangfei",age:12},
