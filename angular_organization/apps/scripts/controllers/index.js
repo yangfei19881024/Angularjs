@@ -1,5 +1,7 @@
 angular.module("shopApp.controller")
-  .controller("index",function($scope){
+
+
+  .controller("index",function($scope,$filter){
 
    $scope.users = [
       {
@@ -22,5 +24,8 @@ angular.module("shopApp.controller")
     var arr = _.first([1, 2, 3]);
 
     console.log(arr);
+    $scope.originalText = 'hello';
+
+    $scope.message = $filter("lowercase")("TOM");
 
   });

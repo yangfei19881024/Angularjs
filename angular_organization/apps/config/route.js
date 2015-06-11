@@ -13,7 +13,8 @@ angular.module("shopApp.config")
       url:"/index",
       views:{
         '':{
-          templateUrl:'views/index.html'
+          templateUrl:'views/index.html',
+          controller:"index"
         },
         'sidebar@index':{
           templateUrl:'views/sidebar.html'
@@ -23,18 +24,17 @@ angular.module("shopApp.config")
         }
       }
     })
-    .state("list",{
-      url:"/list/:serviceId/t/:typeId/a/:areaId/o/:orderId?cityid",
-      controller:"list",
-      templateUrl:"views/list.html"
-    })
     .state('index.user',{
       url:'/user',
       templateUrl:'views/user_content.html'
     })
-    .state('index.user.adduser',{
-      url:'/adduser',
-      templateUrl:'views/user_add.html'
+    .state("index.product",{
+      url:"/product",
+      templateUrl:"views/product.html"
+    })
+    .state("index.about",{
+      url:"/about",
+      templateUrl:"views/about.html"
     })
 
 }])
