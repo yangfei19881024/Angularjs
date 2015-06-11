@@ -26,5 +26,19 @@
     <h2>{{message}}</h2>
 
 
+    <table width="100%" border="1" >
+
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+
+        <tr ng-repeat="user in users | filterUsers:15">
+          <td >{{user.name}}</td>
+          <td >{{user.age}}</td>
+        </tr>
+
+    </table>
+
   </div>
 </div>
