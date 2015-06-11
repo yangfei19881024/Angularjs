@@ -8,24 +8,18 @@
  *
  * Main module of the application.
  */
-    angular.module('mytodoApp', [
+    angular.module('shopApp.controller',[]);
+    angular.module('shopApp.directive',[]);
+    angular.module('shopApp.service',[]);
+
+    angular.module('shopApp', [
        'ngCookies',
        'ngResource',
        'ngSanitize',
-       'ngRoute',
+       'ui.router',
        'ui.sortable',
-       'LocalStorageModule'
+       'LocalStorageModule',
+       'shopApp.controller',
+       'shopApp.directive',
+       'shopApp.service',
     ])
-   .config(['localStorageServiceProvider', function(localStorageServiceProvider){
-       localStorageServiceProvider.setPrefix('ls');
-   }])
-   .config(function ($routeProvider) {
-       $routeProvider
-         .when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-         })
-         .otherwise({
-            redirectTo: '/'
-         });
-   });

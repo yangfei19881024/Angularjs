@@ -1,0 +1,20 @@
+<h3>List of Route 1 Items</h3>
+<ul>
+  <li ng-repeat="item in items">{{item}}</li>
+</ul>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>age</th>
+  </tr>
+  <tr ng-repeat="user in users">
+    <td>{{user.name}}</td>
+    <td>{{user.age}}</td>
+  </tr>
+</table>
+
+<span>这是子路由 <a data-ui-sref=".son1({params1:1,params2:2,params3:3})">子路由1</a></span>
+<span>这是子路由 <a data-ui-sref=".son2({params1:1,params2:2,params3:3})">子路由2</a></span>
+<div data-ui-view>
+
+</div>

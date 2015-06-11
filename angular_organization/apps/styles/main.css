@@ -1,0 +1,22 @@
+.list li{
+  padding:10px;
+  border-bottom:1px solid red;
+}
+
+#page {
+    height: 1000px;
+}
+
+header {
+    height: 100px;
+    background-color: grey;
+}
+
+section {
+    height: 900px;
+    background-color: lightgrey;
+}
+
+.min section {
+    background-color: pink;
+}

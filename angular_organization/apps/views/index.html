@@ -1,13 +1,20 @@
-<h1>Index page</h1>
-<body>
-  <h1>Index body page!!!</h1>
-  <ul>
-    <li ng-repeat="user in users">{{user.name}}</li>
-  </ul>
+
+<h1>Index body page!!!</h1>
 
 
-  <hello-world></hello-world>
-
+<<<<<<< HEAD
   <a data-ui-sref="list">进入列表页面</a>
+=======
+<button type="button" name="button" ng-click="clickMe()">点击测试</button>
+>>>>>>> 2528723597be7a61d738f2350373fd6c4fdfa4a1
 
-</body>
+<ul class="list" scroll-top>
+  <li ng-repeat="user in users">{{user.name}}</li>
+</ul>
+
+<div scroll id="page" ng-class="{min:boolChangeClass}">
+
+    <header></header>
+    <section></section>
+
+</div>

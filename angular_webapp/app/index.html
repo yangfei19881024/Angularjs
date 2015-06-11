@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="mytodoApp">
+<html ng-app="shopApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -17,59 +17,13 @@
     </style>
     <!-- endbuild -->
   </head>
-  <body ng-controller="MainCtrl">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
-    <!-- <div class="container">
-      <header ng-include="'views/header.html'"></header>
-      <div ui-view></div>
-    </div> -->
-
-    <!---->
-    <!-- <ul>
-      <li ng-repeat="person in Persons">{{person.name}}</li>
-    </ul> -->
-
-    <div class="container">
-      <h2>My todos</h2>
-
-      <form role="form" ng-submit="addTodo()">
-        <div class="row">
-          <div class="input-group">
-            <input type="text" ng-model="todo" placeholder="What needs to be done?">
-            <span class="input-grounp-btn">
-              <input type="submit" value="Add" class="btn btn-primary">
-            </span>
-          </div>
-        </div>
-      </form>
-
-      <p></p>
-
-      <div ui-sortable ng-model="todos">
-        <p class="input-group" ng-repeat="todo in todos" style="padding:5px 10px; cursor: move;">
-            <input type="text" ng-model="todo" class="form-control">
-            <span class="input-group-btn">
-                <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
-            </span>
-        </p>
-      </div>
-
-      <input type="button" ng-click="addLocalStorage()" class="btn btn-primary" value="添加localStorage">
-      <input type="button" ng-click="getLocalStorage()" class="btn btn-primary" value="获取localStorage">
-
-
-      <div class="ng-cloak" ng-cloak>
-        {{'Kitty' | greet}}
-      </div>
-
-    </div>
-
-    <!---->
+    <div data-ui-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -91,7 +45,6 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
@@ -104,7 +57,13 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <!-- <script src="scripts/directive/mydirective.js"></script> -->
-            <!-- endbuild -->
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/controllers/listson.js"></script>
+
+        <script src="scripts/directives/utils.js"></script>
+
+        <script src="scripts/config/route.js"></script>
+        <script src="scripts/services/dataService.js"></script>
+       <!-- endbuild -->
 </body>
 </html>
