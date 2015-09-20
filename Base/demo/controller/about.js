@@ -1,8 +1,7 @@
-angular.module("AboutModule",[])
-  .controller("aboutController",function($scope,$stateParams){
+angular.module("myModule")
+  .controller("aboutController",function($scope,$stateParams,People){
     $scope.about = "about page";
-    $scope.people = {
-      age:$stateParams.age,
-      name:$stateParams.name
-    }
+    console.log("people lists");
+
+    console.log(People);
   });

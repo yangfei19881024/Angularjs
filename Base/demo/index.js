@@ -1,4 +1,4 @@
-var myModule = angular.module("myModule",['pasvaz.bindonce','ui.router','indexModule','AboutModule']);
+var myModule = angular.module("myModule",['pasvaz.bindonce','ui.router']);
 
 myModule.config(["$urlRouterProvider","$stateProvider","$locationProvider",function($urlRouterProvider,$stateProvider,$locationProvider){
 	$urlRouterProvider.otherwise("/");
