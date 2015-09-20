@@ -1,4 +1,4 @@
-angular.module("myModule")
+angular.module("Boqii.Module")
   .controller("indexController",function($scope,People){
 
     $scope.name = "yangfei";

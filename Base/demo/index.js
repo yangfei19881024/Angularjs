@@ -1,4 +1,5 @@
-var myModule = angular.module("myModule",['pasvaz.bindonce','ui.router']);
+var myModule = angular.module("Boqii.APP",['pasvaz.bindonce','ui.router','Boqii.Module']);
+angular.module("Boqii.Module",[]);
 
 myModule.config(["$urlRouterProvider","$stateProvider","$locationProvider",function($urlRouterProvider,$stateProvider,$locationProvider){
 	$urlRouterProvider.otherwise("/");

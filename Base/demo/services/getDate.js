@@ -1,4 +1,4 @@
-angular.module("myModule")
+angular.module("Boqii.Module")
   .factory("People",function(){
     return [
       {name:"yangfei",age:12},
