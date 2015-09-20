@@ -1,33 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		.red_bg{
-			background: red;
-		}
-		.blue_bg{
-			background: blue;
-		}
-	</style>
 </head>
 <body>
-	
-	<div ng-controller="myApp">
-		<h1>父级count:{{count}}</h1>
-		<ul>
-			<li ng-repeat="i in [1]">
-				<button ng-click="$emit('myEvent')">$emit('myEvent')</button>
-				<button ng-click="$broadcast('myEvent')">$broadcast('myEvent')</button>
-				<ul>
-					<li ng-repeat="i in arr">{{i}}</li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+	<script type="text/javascript">
 
-	<script src="../../bower_components/angular/angular.min.js"></script>
-	<script src="index.js"></script>
+		function Foo(a,b,c){
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		}
+
+		var bar = {};
+
+		var foo = new Foo();
+
+		foo.call(bar,1,2,3);
+
+	</script>
 </body>
 </html>

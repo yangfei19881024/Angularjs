@@ -3,50 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
 	<style>
-		.strike{
-			text-decoration: line-through;
-		}
-
-		.bold{
-			font-weight: bold;
-		}
-
-		.red{
-			color:red;
-		}
-
-		.active{
-			color: red;
-		}
-
-		.list-group li{
-			padding:5px 0;
-		}
-
-		.htitle{
-			color:white;
-		}
-		.red{
-			background: red;
-		}
+		img{
+			width:100px;
+			height:100px;
+		};
 	</style>
 </head>
 
-<body ng-controller="MyCntrl">
+<body ng-controller="myController">
 
-	<input type="checkbox" ng-model="master">点击我
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="masterww"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
+	<div ui-view>
 
 
-	<script src="../../bower_components/angular/angular.min.js"></script>
-	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
+	</div>
+
+	<script src="./angular.min.js"></script>
+	<script src="./bindonce.min.js"></script>
+	<script src="./angular-ui-router.js"></script>
 	<script src="index.js"></script>
+	<script src="home.js"></script>
+	<script src="controller/about.js"></script>
 
 
 </body>

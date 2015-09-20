@@ -1,6 +1,30 @@
+<<<<<<< HEAD
 
 <h1>Index body page!!!</h1>
 
+=======
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <div class="span2">
+      <ul>
+        <li><a data-ui-sref="index">首页</a></li>
+        <li>
+          <a data-ui-sref="index.user">用户</a>
+          <!-- <ul>
+            <li><a data-ui-sref=".adduser">用户添加</a></li>
+            <li><a data-ui-sref=".deluser">用户删除</a></li>
+          </ul> -->
+        </li>
+        <li><a data-ui-sref="index.product">产品</a></li>
+        <li><a data-ui-sref="index.about">关于我们</a></li>
+      </ul>
+    </div>
+
+    <div class="span10">
+      <div data-ui-view></div>
+    </div>
+>>>>>>> route_branch
 
 <<<<<<< HEAD
   <a data-ui-sref="list">进入列表页面</a>
@@ -8,6 +32,7 @@
 <button type="button" name="button" ng-click="clickMe()">点击测试</button>
 >>>>>>> 2528723597be7a61d738f2350373fd6c4fdfa4a1
 
+<<<<<<< HEAD
 <ul class="list" scroll-top>
   <li ng-repeat="user in users">{{user.name}}</li>
 </ul>
@@ -17,4 +42,26 @@
     <header></header>
     <section></section>
 
+=======
+    <h1>{{message | myToUpper:"yangfei":"tomcat"}}</h1>
+
+    <h2>{{message}}</h2>
+
+
+    <table width="100%" border="1" >
+
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+
+        <tr ng-repeat="user in users | filterUsers:15">
+          <td >{{user.name}}</td>
+          <td >{{user.age}}</td>
+        </tr>
+
+    </table>
+
+  </div>
+>>>>>>> route_branch
 </div>

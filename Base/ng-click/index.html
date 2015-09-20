@@ -5,20 +5,24 @@
 	<title>Document</title>
 
 </head>
-<body>
-	<div ng-controller="myController">
-		<ul>
-			<li ng-repeat="name in names">
-				{{name}} <a href="javascript:;" ng-click="removeName($index)">删除</a>
-			</li>
-		</ul>
-		<input type="text" ng-model="new_name"><input type="button" ng-click="addName()" value="添加">
+<body ng-controller="myController">
 
+	<input type="text" ng-model="serach">
 
-		<div>{{getName()}}</div>
+	<table width="100%" border=1>
 
-	</div>
-		
+		<tr ng-repeat="people in peoples | orderBy:priority:true">
+			<td>{{people.name}}</td>
+			<td>{{people.description}}</td>
+			<td>{{people.priority}}</td>
+			<td>{{people.done}}</td>
+			<td><a href="javascript:;" ng-click="del($index)">Delete</a></td>
+		</tr>
+
+	</table>
+	<h2>{{totalpriority()}}</h2>
+	<div ng-show="peoples.length == 0">没有数据</div>
+
 
 	<script src="../../bower_components/angular/angular.min.js"></script>
 	<script src="index.js"></script>

@@ -10,7 +10,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 },
                 'main@index': {
                     templateUrl: 'tpls3/home.html'
-                }
+                },
             }
         })
         .state('usermng', {
@@ -19,6 +19,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 '': {
                     templateUrl: 'tpls3/usermng.html',
                     controller: function($scope, $state) {
+                        $scope.users = [
+                          {name:"yangfei",age:14},
+                          {name:"tomcat",age:15},
+                          {name:"cjok",age:16}
+                        ];
                         $scope.addUserType = function() {
                             $state.go("usermng.addusertype");
                         }

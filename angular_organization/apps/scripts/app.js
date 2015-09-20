@@ -1,10 +1,13 @@
+angular.module('shopApp.config',[]);
 angular.module('shopApp.controller',[]);
 angular.module('shopApp.directive',[]);
+angular.module('shopApp.filter',[]);
 
 angular.module('shopApp', [
   'ui.router',
   'shopApp.controller',
   'shopApp.directive',
+<<<<<<< HEAD
   'pasvaz.bindonce'
 ])
 .config(["$locationProvider",function($locationProvider){
@@ -27,3 +30,8 @@ angular.module('shopApp', [
     })
 
 }])
+=======
+  'shopApp.filter',
+  'shopApp.config'
+])
+>>>>>>> route_branch

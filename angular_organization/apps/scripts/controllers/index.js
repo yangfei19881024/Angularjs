@@ -1,5 +1,11 @@
 angular.module("shopApp.controller")
+<<<<<<< HEAD
   .controller("index",function($scope,$window){
+=======
+
+
+  .controller("index",function($scope,$filter){
+>>>>>>> route_branch
 
    $scope.users = [
       {
@@ -50,11 +56,18 @@ angular.module("shopApp.controller")
     // lodash test
     //var arr = _.first([1, 2, 3]);
 
+<<<<<<< HEAD
     // console.log(arr);
 =======
     angular.element($window).bind("scroll", function(e) {
        $scope.visible = false;
    })
 >>>>>>> 2528723597be7a61d738f2350373fd6c4fdfa4a1
+=======
+    console.log(arr);
+    $scope.originalText = 'hello';
+
+    $scope.message = $filter("lowercase")("TOM");
+>>>>>>> route_branch
 
   });

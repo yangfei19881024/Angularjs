@@ -8,18 +8,22 @@
  *
  * Main module of the application.
  */
-    angular.module('shopApp.controller',[]);
-    angular.module('shopApp.directive',[]);
-    angular.module('shopApp.service',[]);
-
-    angular.module('shopApp', [
-       'ngCookies',
-       'ngResource',
-       'ngSanitize',
-       'ui.router',
-       'ui.sortable',
-       'LocalStorageModule',
-       'shopApp.controller',
-       'shopApp.directive',
-       'shopApp.service',
-    ])
+angular
+  .module('angularWebappApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch'
+  ])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
