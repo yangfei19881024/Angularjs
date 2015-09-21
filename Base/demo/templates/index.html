@@ -4,3 +4,10 @@
     <span bo-text="item"></span>
   </li>
 </ul>
+<h1>
+  <input type="checkbox" ng-model="checkAll" ng-change="checkAllFun()">全选
+</h1>
+<div class="" ng-repeat="craw in craws" >
+
+  <input type="checkbox" ng-model="crew.isSelected">{{::craw.name}}
+</div>

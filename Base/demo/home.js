@@ -5,5 +5,35 @@ angular.module("Boqii.Module")
 
     $scope.items = ["item1","item2","item3"];
 
-    console.log(People);
+    $scope.craws = [
+      {
+        name:"yang",
+        isSelected:true
+      },
+      {
+        name:"tom",
+        isSelected:false
+      },
+      {
+        name:"jack",
+        isSelected:true
+      },
+    ];
+
+
+    $scope.checkAllFun = function(){
+
+      if( $scope.checkAll ){
+        angular.forEach($scope.craws,function(value,key){
+          value.isSelected = false;
+        })
+      }else{
+        angular.forEach($scope.craws,function(value,key){
+          value.isSelected = true;
+        })
+
+      }
+
+    }
+
   });
