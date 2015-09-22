@@ -20,6 +20,14 @@ myModule.controller("myController",["$scope","$interval",function($scope,$interv
 	// $scope.getName = function(){
 	// 	return $scope.age;
 	// }
+	$scope.name = "tomcat";
+	$scope.changeName = function(){
+		$scope.name = "yangfei";
+	}
+
+	$scope.$on("changeName",function(event,value){
+		$scope.name = value;
+	})
 
 
 	$scope.peoples = [
@@ -67,4 +75,12 @@ myModule.controller("myController",["$scope","$interval",function($scope,$interv
 	console.log($scope);
 
 
-}]);
+}])
+	.controller("sonController",function($scope){
+
+		$scope.changeSonName = function(){
+			$scope.name = "son_yangfei";
+			$scope.$emit("changeName",$scope.name);
+		}
+
+	})
