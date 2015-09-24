@@ -8,13 +8,32 @@
   <input type="checkbox" ng-model="checkAll" ng-change="checkAllFun()">全选
 </h1>
 <div class="" ng-repeat="craw in craws" >
-  <input type="checkbox" ng-model="crew.isSelected">{{::craw.name}}
+  <input type="checkbox" ng-model="craw.isSelected">{{::craw.name}}
 </div>
 
 <welcome hello howdy hi title="dirname" fun="sayName()">Say something!</welcome>
 
-<!--iscroll-->
+<!--ng-class examples-->
 
+<input type="text" ng-model="textType">
+<div ng-class="textType">Look! I'm Words!</div>
+
+<!-- both input boxes below will be classes for the div -->
+<input type="text" ng-model="styleOne">
+<input type="text" ng-model="styleTwo">
+
+<!-- input box to toggle a variable to true or false -->
+<input type="checkbox" ng-model="awesome"> Are You Awesome?
+<input type="checkbox" ng-model="giant"> Are You a Giant?
+
+<!-- add the class 'text-success' if the variable 'awesome' is true -->
+<div ng-class="{ red: awesome, blue: giant }">hello </div>
+
+<!-- this div will take on both classes from above -->
+<div ng-class="[styleOne, styleTwo]">Look! I'm Words!</div>
+
+
+<!--iscroll-->
 <div id="header">iScroll</div>
 
 <div class="wrapper w1" data-iscroll>

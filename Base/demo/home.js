@@ -22,14 +22,13 @@ angular.module("Boqii.Module")
 
 
     $scope.checkAllFun = function(){
-
       if( $scope.checkAll ){
         angular.forEach($scope.craws,function(value,key){
-          value.isSelected = false;
+          value.isSelected = true;
         })
       }else{
         angular.forEach($scope.craws,function(value,key){
-          value.isSelected = true;
+          value.isSelected = false;
         })
 
       }
@@ -41,6 +40,10 @@ angular.module("Boqii.Module")
     $scope.sayName = function(){
       alert("sayName");
     }
+
+    //ng-class
+
+
   })
   .directive("welcome",function(){
 
