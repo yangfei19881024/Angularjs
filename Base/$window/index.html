@@ -12,9 +12,31 @@
 		}
 	</style>
 </head>
-<body>
-	<div ng-controller="myApp">
-		<a href="javascript:;" ng-click="greeting()">测试</a>
+<body >
+
+	<div ng-controller="AppController" >
+
+		<table border="1" width="400">
+
+			<tr>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>操作</th>
+			</tr>
+
+			<tr data-ng-repeat="user in users">
+				<td>{{user.id}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.age}}</td>
+				<td><button data-ng-click="editUser($index)">编辑</button></td>
+			</tr>
+
+		</table>
+
+		<input type="text" data-ng-model="user.name"><br/>
+		<input type="text" data-ng-model="user.age"><br/>
+		<input type="button" value="添加" data-ng-click="addUser()">
 	</div>
 
 	<script src="../../bower_components/angular/angular.min.js"></script>

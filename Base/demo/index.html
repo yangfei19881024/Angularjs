@@ -1,56 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myModule">
+<html lang="en" ng-app="Boqii.APP">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
+    <link href="./datejs/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+    <link href="./datejs/mobiscroll.scroller.android-ics.css" rel="stylesheet" type="text/css" />
+    <link href="./datejs/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
 	<style>
-		.strike{
-			text-decoration: line-through;
+		body {
+            margin: 0;
+            padding: 0;
+            /* overflow: hidden; */
+        }
+        .red{
+        	background: red;
+        }
+        .blue{
+         	background: blue;
+         }
+		#iSlider-wrapper {
+			height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: fixed;
+            background: #333;
+            left:0px;
+            right: 0px;
+            top:0px;
+            bottom:0px;
+            display: none;		}
+		.active_slider{
+			display: block !important;
+		}
+		#iSlider-wrapper ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
 		}
 
-		.bold{
-			font-weight: bold;
+		#iSlider-wrapper li {
+				position: absolute;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-box-pack: center;
+				-webkit-box-align: center;
+				list-style: none;
 		}
 
-		.red{
-			color:red;
+		#iSlider-wrapper li img {
+				max-width: 100%;
+				max-height: 100%;
 		}
 
-		.active{
-			color: red;
+		.loadmore li{
+			padding:10px;
+			border:1px solid red;
+			margin-bottom: 10px;
+			width: 70%;
 		}
 
-		.list-group li{
-			padding:5px 0;
-		}
+		body {
+            padding: 0;
+            margin: 0;
+            font-family: arial, verdana, sans-serif;
+            font-size: 12px;
+            background: #ddd;
+        }
 
-		.htitle{
-			color:white;
-		}
-		.red{
-			background: red;
-		}
+        input{
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            border-radius: 5px;
+            -webkit-box-sizing: border-box;
+            -webkit-border-radius: 5px;
+        }
+        .content {
+            padding: 15px;
+            background: #fff;
+        }
+
+        .demo {
+            display: block;
+        }
+
 	</style>
 </head>
 
-<body ng-controller="MyCntrl">
+<body>
 
-	<input type="checkbox" ng-model="master">点击我
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
-	<input type="checkbox" ng-checked="master"><br/>
+	<div ui-view>
 
-	<div>
-		hello {{clock}}
+
 	</div>
 
-	<script src="../../bower_components/angular/angular.min.js"></script>
-	<script src="../../bower_components/angular-route/angular-route.min.js"></script>
+	<script src="./angular.min.js"></script>
+	<script src="./bindonce.min.js"></script>
+	<script src="./angular-ui-router.js"></script>
+	<script src="./islider_core.js"></script>
+	<script src="./zepto.js"></script>
 	<script src="index.js"></script>
+	<script src="home.js"></script>
+	<script src="controller/about.js"></script>
+	<script src="services/getDate.js"></script>
+	<script src="directives/islider.js"></script>
+	<script src="directives/reach-bottom-load.js"></script>
 
+	<script src="./jquery.min.js"></script>
+	<script src="./lodash.js"></script>
+	<script src="./angular-touch.min.js"></script>
+
+	 <script src="./datejs/mobiscroll.core.js" type="text/javascript"></script>
+   <script src="./datejs/mobiscroll.scroller.js" type="text/javascript"></script>
+   <script src="./datejs/mobiscroll.i18n.zh.js" type="text/javascript"></script>
+  <script src="./datejs/mobiscroll.select.js" type="text/javascript"></script>
+
+	<script src="directives/date.js"></script>
 
 </body>
 </html>

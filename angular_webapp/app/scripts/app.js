@@ -8,22 +8,15 @@
  *
  * Main module of the application.
  */
+angular.module("Admin.controller",[]);
+angular.module("Admin.directive",[]);
+angular.module("Admin.services",[]);
+
 angular
-  .module('angularWebappApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+  .module('Admin', [
+    'ngTouch',
+    'Admin.controller',
+    'Admin.directive',
+    'Admin.services',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });

@@ -1,24 +1,21 @@
-var module = angular.module("myModule",['ngRoute']);
+angular.module("Boqii.Module",[]);
 
-module.controller("MyCntrl",["$scope","$interval",function($scope,$interval){
+var myModule = angular.module("Boqii.APP",['pasvaz.bindonce','ui.router','Boqii.Module','ngTouch']);
 
-	$scope.arr = [1, 2, 3];
-	
-	var values = {name: 'misko', gender: 'male'};
+myModule.config(["$urlRouterProvider","$stateProvider","$locationProvider",function($urlRouterProvider,$stateProvider,$locationProvider){
+	$urlRouterProvider.otherwise("/");
 
-	angular.forEach(values,function(value,key){
+	$locationProvider.html5Mode({enabled:true,requireBase:false});
 
-			console.log("value:"+value+"key:"+key);
-	});
-
-	$scope.clock = new Date();
-
-  var updateClock = function() {
-    $scope.clock = new Date();
-	};
-
-	$interval(updateClock,1000);
-
-	updateClock();
-
-}]);
+	$stateProvider
+		.state("home",{
+			url:"/",
+			templateUrl:"templates/index.html",
+			controller:"indexController"
+		})
+		.state("about",{
+			url:"/about/",
+			templateUrl:"templates/about.html",
+			controller:"indexController"
+		})
+}])

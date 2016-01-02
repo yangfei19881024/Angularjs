@@ -17,6 +17,28 @@
 
 		<input type="button" value="点击看看" ng-click="change()">
 
+		<table border="1" width="500">
+			<tr>
+				<th>ID</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>操作</th>
+			</tr>
+			<tr data-ng-repeat="user in users">
+				<td>{{user.id}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.age}}</td>
+				<td>
+					<input type="button" data-ng-click="delete($index)" value="删除">
+					<input type="button" data-ng-click="update($index)" value="修改">
+				</td>
+			</tr>
+		</table>
+
+		<input type="text" name="name" data-ng-model="use.name" placeholder=""><br/>
+		<input type="text" name="name" data-ng-model="use.age" placeholder=""><br/>
+		<input type="button" value="保存" data-ng-click="save">
+
 	</div>
 
 	<script src="../../bower_components/angular/angular.min.js"></script>
